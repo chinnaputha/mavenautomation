@@ -24,15 +24,19 @@ public class TestBase {
 
 		if (browser.equalsIgnoreCase("chrome")) {
 			// path of chrome browser driver
-			System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+			
+			WebDriverManager.chromedriver().setup();
+			//System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 			// open the chrome browser
 			driver = new ChromeDriver();
 		} else if(browser.equalsIgnoreCase("Firefox") || browser.equalsIgnoreCase("FF")) {
-			System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+			//System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+			WebDriverManager.firefoxdriver().setup();
 			//open the FF browser
 			 driver = new FirefoxDriver();
 		} else {
-			System.setProperty("webdriver.ie.driver", "drivers\\IEDriverServer.exe");
+			WebDriverManager.iedriver().setup();
+			//System.setProperty("webdriver.ie.driver", "drivers\\IEDriverServer.exe");
 			//open the IE browser
 			 driver = new InternetExplorerDriver();
 		}
