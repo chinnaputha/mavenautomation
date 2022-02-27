@@ -10,7 +10,7 @@ public class NaukriTest  extends TestBase{
 	
 	@Test(alwaysRun = true)
 	public void lanuchNaukriApp() {
-		openApplication("chrome", "https://www.naukri.com/nlogin/login");
+		openApplication("FF", "https://www.naukri.com/nlogin/login");
 	}
 	
 	@Test(dependsOnMethods = "lanuchNaukriApp")
